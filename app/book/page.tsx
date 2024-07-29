@@ -114,7 +114,7 @@ const Book = () => {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>
-                        Patient's Name<sup>*</sup>
+                        Patient&apos;s Name<sup>*</sup>
                       </FormLabel>
                       <FormControl>
                         <Input
