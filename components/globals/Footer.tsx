@@ -1,5 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { Wrapper } from "./Wrapper";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 const routes = [
   {
@@ -21,6 +25,7 @@ const routes = [
 ];
 
 const Footer = () => {
+  const pathName = usePathname();
   return (
     <div>
       <footer className="bg-[#F6F6F6]">
@@ -41,7 +46,10 @@ const Footer = () => {
                     <Link
                       key={route.name}
                       href={route.path}
-                      className="hover:underline me-4 md:me-6"
+                      className={cn(
+                        "hover:underline me-4 md:me-6",
+                        pathName === route.path && "font-semibold underline"
+                      )}
                     >
                       {route.name}
                     </Link>

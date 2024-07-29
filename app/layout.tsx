@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("bg-[#F6F6F6] text-[#252525]", inter.className)}>
+      <body className={cn("text-[#252525]", inter.className)}>
         <main>
           <Navbar />
           {children}

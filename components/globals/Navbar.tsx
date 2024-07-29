@@ -74,7 +74,9 @@ const Navbar = () => {
           ))}
         </div>
 
-        <Button>Book me</Button>
+        <Button asChild>
+          <Link href="/book">Book Now</Link>
+        </Button>
       </Wrapper>
     </div>
   );

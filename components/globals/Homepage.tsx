@@ -17,10 +17,10 @@ const Homepage = () => {
         </p>
         <div className="flex gap-4 items-center justify-center">
           <Button asChild>
-            <Link href="/book">Book Me</Link>
+            <Link href="/book">Book Now</Link>
           </Button>
           <Button variant="ghost" asChild>
-            <Link href="/about">Learn More</Link>
+            <Link href="/services">Learn More</Link>
           </Button>
         </div>
       </Wrapper>
@@ -132,7 +132,9 @@ const Homepage = () => {
           </div>
         </div>
 
-        <Button>Learn More</Button>
+        <Button asChild>
+          <Link href="/services">Learn More</Link>
+        </Button>
       </Wrapper>
 
       <Wrapper className="my-10">
@@ -144,17 +146,18 @@ const Homepage = () => {
           </h2>
           <p className="leading-6 text-sm w-[100%] md:w-[80%]">
             Booking an appointment at our dental clinic is quick and simple.
-            Just follow these easy steps: 1. Choose your preferred date and
-            time. 2. Fill out the appointment form with your contact details. 3.
-            Click &apos;Submit&apos; to confirm your appointment. Our friendly
-            staff will then reach out to you to confirm the details.
+            Just follow these easy steps: <br />
+            1. Choose your preferred date and time. <br /> 2. Fill out the
+            appointment form with your contact details. <br /> 3. Click
+            &apos;Submit&apos; to confirm your appointment. Our friendly staff
+            will then reach out to you to confirm the details.
           </p>
           <div className="flex gap-4 items-center justify-center">
             <Button asChild>
-              <Link href="/book">Book Me</Link>
+              <Link href="/book">Book Now</Link>
             </Button>
             <Button variant="ghost" asChild>
-              <Link href="/about">Learn More</Link>
+              <Link href="/services">Learn More</Link>
             </Button>
           </div>
           <Image
