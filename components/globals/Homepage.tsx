@@ -27,14 +27,14 @@ const Homepage = () => {
 
       <div className="flex justify-center items-center">
         <Image
-          src="/clinic.jpg"
+          src="/Clinic.jpg"
           alt="Dental Clinic"
           height="1000"
           width="1500"
         />
       </div>
 
-      <Wrapper className="my-6 max-w-screen-2xl">
+      <Wrapper className="my-10 max-w-screen-2xl">
         <div className="flex flex-col items-center justify-center md:flex-row gap-4 px-2">
           <div className="flex-1 space-y-6 md:text-left">
             <h2 className="scroll-m-20 text-3xl font-semibold tracking-tight">
@@ -68,9 +68,9 @@ const Homepage = () => {
               </div>
             </div>
           </div>
-          <div className="flex-1 flex justify-center my-6">
+          <div className="flex-1 flex justify-center my-10">
             <Image
-              src="/orthodontist.jpg"
+              src="/Orthodontist.jpg"
               alt="Dental Services"
               height="700"
               width="700"
@@ -79,7 +79,7 @@ const Homepage = () => {
         </div>
       </Wrapper>
 
-      <Wrapper className="max-w-screen-2xl my-6">
+      <Wrapper className="max-w-screen-2xl my-10">
         <div className="flex flex-col gap-4 w-[100%] md:w-[80%] lg:w-[40%]">
           <p className="leading-6 text-sm font-semibold">
             Your Smile, Our Priority
@@ -133,6 +133,37 @@ const Homepage = () => {
         </div>
 
         <Button>Learn More</Button>
+      </Wrapper>
+
+      <Wrapper className="my-10">
+        <div className="flex flex-col items-center text-center justify-center gap-6">
+          <p className="leading-6 text-sm">Convenient</p>
+          <h2 className="scroll-m-20 text-4xl font-semibold tracking-tight">
+            Easy and Hassle-Free{" "}
+            <span className="text-[#00CE8F]">Appointment Booking</span> Process
+          </h2>
+          <p className="leading-6 text-sm w-[100%] md:w-[80%]">
+            Booking an appointment at our dental clinic is quick and simple.
+            Just follow these easy steps: 1. Choose your preferred date and
+            time. 2. Fill out the appointment form with your contact details. 3.
+            Click 'Submit' to confirm your appointment. Our friendly staff will
+            then reach out to you to confirm the details.
+          </p>
+          <div className="flex gap-4 items-center justify-center">
+            <Button asChild>
+              <Link href="/book">Book Me</Link>
+            </Button>
+            <Button variant="ghost" asChild>
+              <Link href="/about">Learn More</Link>
+            </Button>
+          </div>
+          <Image
+            src="/Appointment.jpg"
+            alt="Dental Appointment"
+            height="1000"
+            width="1000"
+          />
+        </div>
       </Wrapper>
     </div>
   );
