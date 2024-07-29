@@ -146,8 +146,8 @@ const Homepage = () => {
             Booking an appointment at our dental clinic is quick and simple.
             Just follow these easy steps: 1. Choose your preferred date and
             time. 2. Fill out the appointment form with your contact details. 3.
-            Click 'Submit' to confirm your appointment. Our friendly staff will
-            then reach out to you to confirm the details.
+            Click &apos;Submit&apos; to confirm your appointment. Our friendly
+            staff will then reach out to you to confirm the details.
           </p>
           <div className="flex gap-4 items-center justify-center">
             <Button asChild>

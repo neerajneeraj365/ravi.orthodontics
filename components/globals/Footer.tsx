@@ -39,6 +39,7 @@ const Footer = () => {
                 <li>
                   {routes.map((route) => (
                     <Link
+                      key={route.name}
                       href={route.path}
                       className="hover:underline me-4 md:me-6"
                     >
