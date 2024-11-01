@@ -1,6 +1,6 @@
 import prisma from "@/lib/prisma";
-import { formSchema } from "@/schema/schema";
-import { NextRequest, NextResponse } from "next/server";
+
+import { NextResponse } from "next/server";
 
 export async function GET() {
   try {
@@ -12,9 +12,9 @@ export async function GET() {
   }
 }
 
-export async function POST(req: NextRequest) {
+export async function POST(req: Request) {
   try {
-    const { registeringFor, name, phone, age, gender, reason }: formSchema =
+    const { registeringFor, name, phone, age, gender, reason } =
       await req.json();
 
     console.log(
