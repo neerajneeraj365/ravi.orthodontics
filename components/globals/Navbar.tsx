@@ -38,7 +38,7 @@ const routes = [
 const Navbar = () => {
   const pathName = usePathname();
   return (
-    <div className="shadow-md">
+    <div className="shadow-md sticky top-0 z-1000 bg-white">
       <Wrapper className="flex justify-between items-center h-16">
         <div className="flex md:hidden items-center">
           <Sheet>
