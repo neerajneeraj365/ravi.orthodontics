@@ -16,6 +16,16 @@ export async function POST(req: NextRequest) {
   try {
     const { registeringFor, name, phone, age, gender, reason }: formSchema =
       await req.json();
+
+    console.log(
+      "Received data:",
+      registeringFor,
+      name,
+      phone,
+      age,
+      gender,
+      reason
+    );
     const booking = await prisma.patient.create({
       data: {
         registeringFor,
