@@ -65,7 +65,7 @@ const Book = () => {
           Book an Appointment
         </h1>
         <p className="leading-7 text-sm md:text-md">
-          Fill out the correct details.
+          Please fill out the correct details.
         </p>
       </Wrapper>
 

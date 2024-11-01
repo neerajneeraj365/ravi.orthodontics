@@ -14,7 +14,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { Headset, Menu } from "lucide-react";
 
 const routes = [
   {
@@ -41,7 +41,6 @@ const Navbar = () => {
     <div className="shadow-md">
       <Wrapper className="flex justify-between items-center h-16">
         <div className="flex md:hidden items-center">
-          {/* TODO: Mobile Navbar */}
           <Sheet>
             <SheetTrigger>
               <Menu className="h-6 w-6" />
@@ -50,7 +49,7 @@ const Navbar = () => {
               <SheetHeader>
                 <SheetTitle>
                   <Link href="/">Dental</Link>
-                  </SheetTitle>
+                </SheetTitle>
                 {routes.map((route) => (
                   <Link
                     key={route.name}
@@ -86,7 +85,9 @@ const Navbar = () => {
         </div>
 
         <Button asChild>
-          <Link href="/book">Book Now</Link>
+          <Link href="tel:4379705609">
+            <Headset className="h-4 w-4" />
+          </Link>
         </Button>
       </Wrapper>
     </div>

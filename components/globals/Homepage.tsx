@@ -19,7 +19,7 @@ const Homepage = () => {
           <Button asChild>
             <Link href="/book">Book Now</Link>
           </Button>
-          <Button variant="ghost" asChild>
+          <Button variant="link" asChild>
             <Link href="/services">Learn More</Link>
           </Button>
         </div>
@@ -49,7 +49,7 @@ const Homepage = () => {
             </p>
             <div className="flex items-center justify-center md:justify-start gap-8">
               <div>
-                <h3 className="scroll-m-20 text-xl md:text-lg lg:text-xl font-semibold tracking-tight">
+                <h3 className="scroll-m-20 text-lg lg:text-xl font-semibold tracking-tight">
                   General Dentistry
                 </h3>
                 <p className="leading-6 text-sm">
@@ -58,7 +58,7 @@ const Homepage = () => {
                 </p>
               </div>
               <div>
-                <h3 className="scroll-m-20 text-xl md:text-lg lg:text-xl font-semibold tracking-tight">
+                <h3 className="scroll-m-20 text-lg lg:text-xl font-semibold tracking-tight">
                   Cosmetic Dentistry
                 </h3>
                 <p className="leading-6 text-sm">
@@ -132,8 +132,8 @@ const Homepage = () => {
           </div>
         </div>
 
-        <Button asChild>
-          <Link href="/services">Learn More</Link>
+        <Button variant='secondary' asChild>
+          <Link href="/services">Explore More</Link>
         </Button>
       </Wrapper>
 
@@ -147,18 +147,17 @@ const Homepage = () => {
           <p className="leading-6 text-sm w-[100%] md:w-[80%]">
             Booking an appointment at our dental clinic is quick and simple.
             Just follow these easy steps: <br />
-            1. Choose your preferred date and time. <br /> 2. Fill out the
-            appointment form with your contact details. <br /> 3. Click
-            &apos;Submit&apos; to confirm your appointment. Our friendly staff
-            will then reach out to you to confirm the details.
+            1. Fill out the appointment form with your contact details. <br />{" "}
+            2. Click &apos;Submit&apos; to confirm your appointment. Our
+            friendly staff will then reach out to you to confirm the details.
           </p>
           <div className="flex gap-4 items-center justify-center">
             <Button asChild>
               <Link href="/book">Book Now</Link>
             </Button>
-            <Button variant="ghost" asChild>
+            {/* <Button variant="ghost" asChild>
               <Link href="/services">Learn More</Link>
-            </Button>
+            </Button> */}
           </div>
           <Image
             src="/Appointment.jpg"

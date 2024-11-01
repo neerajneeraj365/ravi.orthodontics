@@ -8,10 +8,10 @@ const Services = () => {
   return (
     <div>
       <Wrapper className="flex flex-col gap-4 items-center justify-center h-[14em] md:h-[16em]">
-        <h1 className="scroll-m-20 text-4xl md:text-6xl font-extrabold tracking-tight lg:text-7xl">
+        <h1 className="scroll-m-20 text-center text-4xl md:text-6xl font-extrabold tracking-tight lg:text-7xl">
           Orthodontics Services
         </h1>
-        <p className="leading-7 text-sm md:text-md">
+        <p className="leading-7 text-sm md:text-md text-center">
           Transforming Smiles with Expert Care!
         </p>
       </Wrapper>
@@ -109,11 +109,11 @@ const Services = () => {
         </div>
       </Wrapper>
 
-      <Wrapper className="flex flex-col gap-4 items-center justify-center h-[14em] md:h-[16em] bg-gray-100 my-10">
-        <h1 className="scroll-m-20 text-4xl md:text-6xl font-extrabold tracking-tight lg:text-7xl">
+      <Wrapper className="flex flex-col gap-4 items-center justify-center h-[14em] md:h-[16em] bg-gray-100 my-10 rounded-lg">
+        <h1 className="scroll-m-20 text-3xl md:text-6xl font-semibold tracking-tight lg:text-6xl text-center">
           Want to book an appointment?
         </h1>
-        <p className="leading-7 text-sm md:text-md">
+        <p className="leading-7 text-sm md:text-md text-center">
           Click on the button below!
         </p>
         <Button asChild>
