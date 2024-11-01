@@ -44,7 +44,7 @@ const Book = () => {
       await axios.post("/api/appointment", values);
       toast({
         title: "Appointment Booked Successfully.",
-        description: "We will call you shortly.",
+        description: "Our friendly staff will call you shortly to confirm the Booking.",
       });
       form.reset();
     } catch (error) {
