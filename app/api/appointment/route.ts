@@ -2,16 +2,6 @@ import prisma from "@/lib/prisma";
 
 import { NextResponse } from "next/server";
 
-export async function GET() {
-  try {
-    return NextResponse.json("Hello world");
-  } catch (error) {
-    return new NextResponse("Error", {
-      status: 500,
-    });
-  }
-}
-
 export async function POST(req: Request) {
   try {
     const { registeringFor, name, phone, age, gender, reason } =
