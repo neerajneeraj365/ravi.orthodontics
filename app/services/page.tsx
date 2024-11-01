@@ -1,21 +1,19 @@
 import { Wrapper } from "@/components/globals/Wrapper";
 import { Button } from "@/components/ui/button";
 import { BriefcaseMedical } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const Services = () => {
   return (
     <div>
-      <Wrapper className="flex flex-col gap-4 items-center justify-center h-[16em] md:h-[18em]">
+      <Wrapper className="flex flex-col gap-4 items-center justify-center h-[14em] md:h-[16em]">
         <h1 className="scroll-m-20 text-4xl md:text-6xl font-extrabold tracking-tight lg:text-7xl">
           Orthodontics Services
         </h1>
         <p className="leading-7 text-sm md:text-md">
           Transforming Smiles with Expert Care!
         </p>
-        <Button asChild>
-          <Link href="/book">Book Now</Link>
-        </Button>
       </Wrapper>
 
       <Wrapper className="max-w-screen-2xl mb-10">
@@ -109,6 +107,18 @@ const Services = () => {
             </p>
           </div>
         </div>
+      </Wrapper>
+
+      <Wrapper className="flex flex-col gap-4 items-center justify-center h-[14em] md:h-[16em] bg-gray-100 my-10">
+        <h1 className="scroll-m-20 text-4xl md:text-6xl font-extrabold tracking-tight lg:text-7xl">
+          Want to book an appointment?
+        </h1>
+        <p className="leading-7 text-sm md:text-md">
+          Click on the button below!
+        </p>
+        <Button asChild>
+          <Link href="/book">Book Now</Link>
+        </Button>
       </Wrapper>
     </div>
   );

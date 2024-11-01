@@ -48,11 +48,22 @@ const Navbar = () => {
             </SheetTrigger>
             <SheetContent side="left">
               <SheetHeader>
-                <SheetTitle>Are you absolutely sure?</SheetTitle>
-                <SheetDescription>
-                  This action cannot be undone. This will permanently delete
-                  your account and remove your data from our servers.
-                </SheetDescription>
+                <SheetTitle>
+                  <Link href="/">Dental</Link>
+                  </SheetTitle>
+                {routes.map((route) => (
+                  <Link
+                    key={route.name}
+                    href={route.path}
+                    className={cn(
+                      "hover:bg-[#00CE8F]/30  text-left p-3 rounded-md",
+                      pathName === route.path &&
+                        "bg-[#00CE8F] hover:bg-[#00CE8F] text-white"
+                    )}
+                  >
+                    {route.name}
+                  </Link>
+                ))}
               </SheetHeader>
             </SheetContent>
           </Sheet>

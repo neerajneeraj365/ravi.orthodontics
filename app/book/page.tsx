@@ -1,12 +1,12 @@
 "use client";
 
-import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Textarea } from "@/components/ui/textarea";
+import axios from "axios";
 
 import {
   Form,
@@ -19,30 +19,14 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Wrapper } from "@/components/globals/Wrapper";
-
-const formSchema = z.object({
-  registeringFor: z.string(),
-  name: z.string().min(2).max(50),
-  phone: z.string().min(10, "Phone number must be at least 10 digits").max(15),
-  age: z
-    .string()
-    .min(0, "Age must be a non-negative number")
-    .max(120, "Age must be less than 120"),
-  gender: z.string(),
-  reason: z
-    .string()
-    .min(0, {
-      message: "Bio must be at least 10 characters.",
-    })
-    .max(160, {
-      message: "Bio must not be longer than 30 characters.",
-    })
-    .optional(),
-});
+import { formSchema } from "@/schema/schema";
+import { useState } from "react";
+import { toast } from "@/hooks/use-toast";
 
 const Book = () => {
+  const [disabled, setDisabled] = useState(false);
   // 1. Define your form.
-  const form = useForm<z.infer<typeof formSchema>>({
+  const form = useForm<formSchema>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       registeringFor: "",
@@ -54,11 +38,25 @@ const Book = () => {
     },
   });
 
-  // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
+  async function onSubmit(values: formSchema) {
+    try {
+      setDisabled(true);
+      await axios.post("/api/appointment", values);
+      toast({
+        title: "Appointment Booked Successfully.",
+        description: "We will call you shortly.",
+      });
+      form.reset();
+    } catch (error) {
+      console.log(error);
+      toast({
+        title: "Failed to Book Appointment",
+        description: "Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setDisabled(false);
+    }
   }
   return (
     <div>
@@ -86,8 +84,9 @@ const Book = () => {
                     <FormControl>
                       <RadioGroup
                         onValueChange={field.onChange}
-                        defaultValue={field.value}
+                        value={field.value}
                         className="flex flex-col space-y-1"
+                        disabled={disabled}
                       >
                         <FormItem className="flex items-center space-x-1 space-y-0">
                           <FormControl>
@@ -121,6 +120,7 @@ const Book = () => {
                           placeholder="Ravi"
                           {...field}
                           className="bg-[#F4F5F9]"
+                          disabled={disabled}
                         />
                       </FormControl>
                       <FormMessage />
@@ -137,9 +137,11 @@ const Book = () => {
                       </FormLabel>
                       <FormControl>
                         <Input
+                          type="number" // Ensure input is numeric
                           placeholder="XXXXXXXXXX"
                           {...field}
                           className="bg-[#F4F5F9]"
+                          disabled={disabled}
                         />
                       </FormControl>
                       <FormMessage />
@@ -156,9 +158,11 @@ const Book = () => {
                       </FormLabel>
                       <FormControl>
                         <Input
+                          type="number" // Ensure input is numeric
                           placeholder="43"
                           {...field}
                           className="bg-[#F4F5F9]"
+                          disabled={disabled}
                         />
                       </FormControl>
                       <FormMessage />
@@ -176,8 +180,9 @@ const Book = () => {
                       <FormControl>
                         <RadioGroup
                           onValueChange={field.onChange}
-                          defaultValue={field.value}
+                          value={field.value}
                           className="flex items-center h-8"
+                          disabled={disabled}
                         >
                           <FormItem className="flex items-center space-x-1 space-y-0">
                             <FormControl>
@@ -211,6 +216,7 @@ const Book = () => {
                         placeholder="Reason for booking."
                         className="resize-none"
                         {...field}
+                        disabled={disabled}
                       />
                     </FormControl>
                     <FormMessage />
@@ -220,6 +226,7 @@ const Book = () => {
               <Button
                 type="submit"
                 className="flex items-center justify-center w-full"
+                disabled={disabled}
               >
                 Submit
               </Button>
