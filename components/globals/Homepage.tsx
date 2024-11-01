@@ -31,6 +31,7 @@ const Homepage = () => {
           alt="Dental Clinic"
           height="1000"
           width="1500"
+          priority
         />
       </div>
 
@@ -132,7 +133,7 @@ const Homepage = () => {
           </div>
         </div>
 
-        <Button variant='secondary' asChild>
+        <Button variant="secondary" asChild>
           <Link href="/services">Explore More</Link>
         </Button>
       </Wrapper>
