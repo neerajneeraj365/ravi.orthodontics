@@ -27,7 +27,7 @@ const Homepage = () => {
 
       <div className="flex justify-center items-center">
         <Image
-          src="/Clinic.jpg"
+          src="/DClinic.jpg"
           alt="Dental Clinic"
           height="1000"
           width="1500"
