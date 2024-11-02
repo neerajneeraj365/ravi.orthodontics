@@ -42,10 +42,10 @@ const Book = () => {
     try {
       setDisabled(true);
       await axios.post("/api/appointment", values);
-      // toast({
-      //   title: "Appointment Booked Successfully.",
-      //   description: "Our friendly staff will call you shortly to confirm the Booking.",
-      // });
+      toast({
+        title: "Appointment Booked Successfully.",
+        description: "Our friendly staff will call you shortly to confirm the Booking.",
+      });
       form.reset();
     } catch (error) {
       console.log(error);
