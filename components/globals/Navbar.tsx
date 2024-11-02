@@ -15,6 +15,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Headset, Menu } from "lucide-react";
+import { useState } from "react";
 
 const routes = [
   {
@@ -37,11 +38,12 @@ const routes = [
 
 const Navbar = () => {
   const pathName = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="shadow-md sticky top-0 z-1000 bg-white">
       <Wrapper className="flex justify-between items-center h-16">
         <div className="flex md:hidden items-center">
-          <Sheet>
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger>
               <Menu className="h-6 w-6" />
             </SheetTrigger>
@@ -112,6 +114,7 @@ const Navbar = () => {
                       pathName === route.path &&
                         "bg-[#00CE8F] hover:bg-[#00CE8F] text-white"
                     )}
+                    onClick={() => setIsOpen((prev) => !prev)}
                   >
                     {route.name}
                   </Link>
